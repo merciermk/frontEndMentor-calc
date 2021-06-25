@@ -35,7 +35,6 @@ export default new Vuex.Store({
       commit('deleteLastInArray')
     },
     addLastInput ({ commit }, input) {
-      console.log(input)
       commit('addToArray', input)
     },
     result ({ commit }) {
