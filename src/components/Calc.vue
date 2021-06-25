@@ -1,10 +1,10 @@
 <template>
-  <div id="#calculette">
+  <div id="calculette">
     <div id="#calcHeader">
       <h4>calc</h4>
     </div>
     <div id="resultat">
-      {{ affichage }}
+      <h4>{{ affichage }}</h4>
     </div>
     <div id="interface">
       <button class="small-button" value="7" @click="userInput($event)">
@@ -111,44 +111,71 @@ export default class Calc extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
 
 $width: 400px;
 $button-small-width: 60px;
 $button-small-height: 30px;
+$key-button-bg: hsl(30, 25%, 89%);
+$global-bg-color: hsl(222, 26%, 31%);
 
 $screen-background-color: hsl(224, 36%, 15%);
 $screen-height: 80px;
 $screen-text-color: hsl(0, 0, 100%);
 $screen-font-size: 32px;
+$font-family: 'Spartan', sans-serif;
+
+body{
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+}
+
+#calculette{
+  background-color: $global-bg-color;
+  width: 1000px;
+  height: 1000px;
+}
 
 #interface {
+  border-radius: 20px;
+  background-color: hsl(223, 31%, 20%);
   display: flex;
   flex-wrap: wrap;
+  height: 400px;
   justify-content: space-between;
   width: $width;
-  height: 400px;
-  background-color: hsl(223, 31%, 20%);
+
+  button{
+    margin: 20px;
+    background-color: $key-button-bg
+  }
 }
 
 #resultat {
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-bottom: 20px;
   background-color: $screen-background-color;
   width: $width;
   height: $screen-height;
   color: $screen-text-color;
   font-size: $screen-font-size;
+
+   h4{
+    margin-right: 20px
+  }
  }
 
 .small-button {
-  margin: 15px;
   width: $button-small-width;
   height: $button-small-height;
 }
 .large-button {
-  margin: 15px;
   width: 150px;
   height: 30px;
 }
 </style>
-
-function dispatch(arg0: string, value: any) { throw new Error('Function not
-implemented.') }
