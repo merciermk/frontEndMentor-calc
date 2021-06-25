@@ -133,15 +133,17 @@ body{
 
 #calculette{
   background-color: $global-bg-color;
-  width: 1000px;
-  height: 1000px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
 }
 
 #interface {
   border-radius: 20px;
   background-color: hsl(223, 31%, 20%);
-  display: flex;
-  flex-wrap: wrap;
   height: 400px;
   justify-content: space-between;
   width: $width;
